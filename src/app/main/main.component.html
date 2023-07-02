@@ -1,0 +1,17 @@
+<h1> {{title}}</h1>
+<h2>Agregar alumno :</h2>
+<p *ngIf="name">el nombre es : {{name}}</p>
+<input type="text"[(ngModel)]="name">
+<p> (se mostraran en rojo los alumnos que ingresen al TOP 3)</p>
+
+
+<ul *ngFor="let alumnos of coderAlumnos">
+  <!-- <li [ngStyle]="{'color': 'red', 'background-color': alumnos === 'madrid' ? 'blue' : 'green'}">{{alumnos}}</li>   -->
+<!-- <li [ngClass]="{'selected ': alumnos == 'Marco' ,'selected ': alumnos == 'Federico' }">{{alumnos}}</li>
+</ul> -->
+<ul>
+  <li [ngClass]="{'selected': alumnos === 'Marco' || alumnos === 'Federico'|| alumnos === 'Valentin'}">{{alumnos}}</li>
+</ul>
+
+<!-- se mostrar en rojo con ngclass los almunos top 3 -->
+
